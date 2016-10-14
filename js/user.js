@@ -30,6 +30,14 @@ User.prototype.getRepos = function(username, displayFunction){
 };
 
 
+var formatDate = function(date){
+  var day = new Date(date).toString();
+  var formatDate = day.split(" ");
+  date = formatDate[1]+" "+formatDate[2]+" "+formatDate[3];
+  return date;
+}
+
+
 exports.userModule = User;
 // f2f8bb3db6ffc1a7de0808320421143b7ce7835d
 //https://api.github.com/users/repos?access_token=
