@@ -144,10 +144,6 @@ var jshint = require('gulp-jshint');
 
 var buildProduction = utilities.env.production;
 
-gulp.task('myTask', function(){
-  console.log('hello gulp');
-});
-
 gulp.task('bowerJS', function () {
   return gulp.src(lib.ext('js').files)
   .pipe(concat('vendor.min.js'))

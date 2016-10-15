@@ -14,7 +14,7 @@ var displayUser = function(username,name,avatar,created,location,url,hireable){
     $("#user").append("<h2><a href='"+url+"'>"+username+"</a></h2>");
 
   }
-  $("#date").append("<h4>Date Created: "+created+"<h4>");
+  $("#date").append("<h4>Date Created: "+formatDate(created)+"<h4>");
   if(location){
     $("#location").append("<h4>Location: "+location+"<h4>");
   }
@@ -23,9 +23,15 @@ var displayUser = function(username,name,avatar,created,location,url,hireable){
   }else{
     $("#hire").append("<h5>Currently Employed/ not looking</h5>");
   }
-}
+};
 
 
+var formatDate = function(date){
+  var day = new Date(date).toString();
+  var formatDate = day.split(" ");
+  date = formatDate[1]+" "+formatDate[2]+", "+formatDate[3];
+  return date;
+};
 
 
 $(document).ready(function(){

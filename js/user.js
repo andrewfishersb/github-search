@@ -30,12 +30,6 @@ User.prototype.getRepos = function(username, displayFunction){
 };
 
 
-var formatDate = function(date){
-  var day = new Date(date).toString();
-  var formatDate = day.split(" ");
-  date = formatDate[1]+" "+formatDate[2]+" "+formatDate[3];
-  return date;
-}
 
 
 exports.userModule = User;
