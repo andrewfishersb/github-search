@@ -26,14 +26,16 @@ var displayUser = function(username,name,avatar,created,location,url,hireable){
 };
 
 var displayRepo = function(username,response){
-  // $("#repo").empty() -- maybe
+  $("#repo").empty();
   for (var i = 0; i < response.length; i++) {
-    $("#repo").append("<h4>Title: <a href='"+response[i].html_url+"'>"+response[i].name+"</a></h4>");
+    $("#repo").append("<h3>Title: <a href='"+response[i].html_url+"'>"+response[i].name+"</a></h3>");
     if(response[i].description){
         $("#repo").append("<h5>Description: "+response[i].description+"</h5>");
     }
-    $("#repo").append("<h5>Main Language: "+response[i].language+"</h5><br>");
-    $("#repo").append("<h5>Created: "+formatDate(response[i].created_at)+"</h5><br>");
+    $("#repo").append("<h5>Main Language: "+response[i].language+"</h5>");
+    $("#repo").append("<h5>Created: "+formatDate(response[i].created_at)+"</h5>");
+    $("#repo").append("<h5>Last Updated: "+formatDate(response[i].updated_at)+"</h5><br>");
+
 
   }
 
