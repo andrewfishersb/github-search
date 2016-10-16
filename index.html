@@ -10,16 +10,26 @@
   </head>
   <body>
     <div class="container">
-      <form class="form-group" id="search">
-        <label for="username">Search for a Username</label>
-        <input type="text" name="username" class="form-control" id="username" value="">
-        <button type="submit" class="btn btn-primary" name="button">Search for a User</button>
-      </form>
-        <div id="pic"></div>
-        <div id="user"></div>
-        <div id="date"></div>
-        <div id="location"></div>
-        <div id='hire'></div>
+      <div class="jumbotron">
+        <h2>Find any GitHub User</h2>
+        <form class="form-group" id="search">
+          <input type="text" name="username" class="form-control" id="username" value="">
+          <button type="submit" class="btn btn-primary" name="button">Search for a User</button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="pic"></div>
+          <div id="user"></div>
+          <div id="date"></div>
+          <div id="location"></div>
+          <div id='hire'></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="repo"></div>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>

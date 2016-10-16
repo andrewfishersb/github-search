@@ -13,23 +13,17 @@ User.prototype.getUserInformation = function (username, displayFunction) {
   });
 };
 
+// username,name,url,description,language
 
 
 
-
-
-
-//seperate method to get follower information
 User.prototype.getRepos = function(username, displayFunction){
   $.get('https://api.github.com/users/'+username+'/repos?access_token=' + apiKey).then(function(response){
-    displayFunction(username,response.followers);
-    console.log(response);
+    displayFunction(username,response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });
 };
-
-
 
 
 exports.userModule = User;

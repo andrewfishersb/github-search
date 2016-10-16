@@ -25,6 +25,22 @@ var displayUser = function(username,name,avatar,created,location,url,hireable){
   }
 };
 
+var displayRepo = function(username,response){
+  // $("#repo").empty() -- maybe
+  for (var i = 0; i < response.length; i++) {
+    $("#repo").append("<h4>Title: <a href='"+response[i].html_url+"'>"+response[i].name+"</a></h4>");
+    if(response[i].description){
+        $("#repo").append("<h5>Description: "+response[i].description+"</h5>");
+    }
+    $("#repo").append("<h5>Main Language: "+response[i].language+"</h5><br>");
+  }
+
+}
+
+//repo
+//Title: title attached to a html_url
+//description if has one
+//main language: language
 
 var formatDate = function(date){
   var day = new Date(date).toString();
@@ -40,7 +56,7 @@ $(document).ready(function(){
     event.preventDefault();
     // $("#all-info").empty();
     var user = $("#username").val();
-    // username.getRepos(user,displayUser);
+    username.getRepos(user,displayRepo);
     username.getUserInformation(user, displayUser);
   });
 });
@@ -59,8 +75,7 @@ $(document).ready(function(){
 //url to repo
 
 
-//possibly display repos
-  // languages
-  // name
-  //html_url
-  //description
+//follower/following
+//avatar_url
+//login
+//html_url
