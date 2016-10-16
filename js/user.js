@@ -24,7 +24,7 @@ User.prototype.getRepos = function(username, displayFunction){
 
 User.prototype.getFollowers = function (username, displayFunction) {
   $.get('https://api.github.com/users/'+username+'/followers?access_token=' + apiKey).then(function(response){
-    displayFunction(username,displayFunction);
+    displayFunction(username,response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });

@@ -35,10 +35,19 @@ var displayRepo = function(username,response){
     $("#repo").append("<h5>Main Language: "+response[i].language+"</h5>");
     $("#repo").append("<h5>Created: "+formatDate(response[i].created_at)+"</h5>");
     $("#repo").append("<h5>Last Updated: "+formatDate(response[i].updated_at)+"</h5><br>");
-
-
   }
+}
 
+var displayFollowers = function(username,response){
+  $("#followers").empty();
+  $("#followers").append("<h4><u>Followers</u></h4>");
+  for (var i = 0; i < response.length; i++) {
+    if(i%2!==0){
+      $("#followers").append("<div class='row'><div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='follower avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div>");
+    }else{
+      $("#followers").append("<div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='follower avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div></div>");
+    }
+  }
 }
 
 
@@ -58,6 +67,7 @@ $(document).ready(function(){
     var user = $("#username").val();
     username.getRepos(user,displayRepo);
     username.getUserInformation(user, displayUser);
+    username.getFollowers(user,displayFollowers);
   });
 });
 
