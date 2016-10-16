@@ -13,10 +13,7 @@ User.prototype.getUserInformation = function (username, displayFunction) {
   });
 };
 
-// username,name,url,description,language
-
-
-
+//could reuse this method for followers and following and just add a third parameter
 User.prototype.getRepos = function(username, displayFunction){
   $.get('https://api.github.com/users/'+username+'/repos?access_token=' + apiKey).then(function(response){
     displayFunction(username,response);
@@ -25,7 +22,14 @@ User.prototype.getRepos = function(username, displayFunction){
   });
 };
 
+User.prototype.getFollowers = function (username, displayFunction) {
+  $.get('https://api.github.com/users/'+username+'/followers?access_token=' + apiKey).then(function(response){
+    displayFunction(username,displayFunction);
+  }).fail(function(error){
+    console.log(error.responseJSON.message);
+  });
 
+};
 exports.userModule = User;
 // f2f8bb3db6ffc1a7de0808320421143b7ce7835d
 //https://api.github.com/users/repos?access_token=

@@ -33,14 +33,12 @@ var displayRepo = function(username,response){
         $("#repo").append("<h5>Description: "+response[i].description+"</h5>");
     }
     $("#repo").append("<h5>Main Language: "+response[i].language+"</h5><br>");
+    $("#repo").append("<h5>Created: "+formatDate(response[i].created_at)+"</h5><br>");
+
   }
 
 }
 
-//repo
-//Title: title attached to a html_url
-//description if has one
-//main language: language
 
 var formatDate = function(date){
   var day = new Date(date).toString();
