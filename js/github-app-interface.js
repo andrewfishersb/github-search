@@ -43,9 +43,9 @@ var displayFollowers = function(username,response){
   $("#followers").append("<h4><u>Followers</u></h4>");
   for (var i = 0; i < response.length; i++) {
     if(i%2!==0){
-      $("#followers").append("<div class='row'><div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='follower avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div>");
+      $("#followers").append("<div class='row'><div class='col-sm-6'><img class='follow-user' src='"+response[i].avatar_url+"' alt='follower avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div>");
     }else{
-      $("#followers").append("<div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='follower avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div></div>");
+      $("#followers").append("<div class='col-sm-6'><img class='follow-user' src='"+response[i].avatar_url+"' alt='follower avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div></div>");
     }
   }
 }
@@ -55,9 +55,9 @@ var displayFollowing = function(username,response){
   $("#following").append("<h4><u>Following</u></h4>");
   for (var i = 0; i < response.length; i++) {
     if(i%2!==0){
-      $("#following").append("<div class='row'><div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='following avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div>");
+      $("#following").append("<div class='row'><div class='col-sm-6'><img class='follow-user' src='"+response[i].avatar_url+"' alt='following avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div>");
     }else{
-      $("#following").append("<div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='following avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div></div>");
+      $("#following").append("<div class='col-sm-6'><img class='follow-user' src='"+response[i].avatar_url+"' alt='following avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div></div>");
     }
   }
 }
@@ -84,7 +84,7 @@ $(document).ready(function(){
 
   });
 
-  $("button").on("click",function() {
+  $(".follow-user").on("click",function() {
     alert("Hey");
   });
 });

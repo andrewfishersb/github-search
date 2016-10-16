@@ -7,7 +7,6 @@ function User(){
 User.prototype.getUserInformation = function (username, displayFunction) {
   $.get('https://api.github.com/users/'+username+'?access_token=' + apiKey).then(function(response){
     displayFunction(username,response.name, response.avatar_url, response.created_at,response.location,response.html_url,response.hireable);
-    console.log(response);
   }).fail(function(error){
     console.log(error.responseJSON);
   });
