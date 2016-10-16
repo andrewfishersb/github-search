@@ -77,11 +77,15 @@ $(document).ready(function(){
     event.preventDefault();
     // $("#all-info").empty();
     var user = $("#username").val();
-    username.getRepos(user,displayRepo);
+    username.getOtherInformation("repos",user,displayRepo);
     username.getUserInformation(user, displayUser);
-    username.getFollowers(user,displayFollowers);
-    username.getFollowing(user,displayFollowing);
+    username.getOtherInformation("followers", user,displayFollowers);
+    username.getOtherInformation("following", user,displayFollowing);
 
+  });
+
+  $("button").on("click",function() {
+    alert("Hey");
   });
 });
 

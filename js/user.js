@@ -14,29 +14,29 @@ User.prototype.getUserInformation = function (username, displayFunction) {
 };
 
 //could reuse this method for followers and following and just add a third parameter
-User.prototype.getRepos = function(username, displayFunction){
-  $.get('https://api.github.com/users/'+username+'/repos?access_token=' + apiKey).then(function(response){
+User.prototype.getOtherInformation = function(typeOfInformation,username, displayFunction){
+  $.get('https://api.github.com/users/'+username+'/'+typeOfInformation+'?access_token=' + apiKey).then(function(response){
     displayFunction(username,response);
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });
 };
 
-User.prototype.getFollowers = function (username, displayFunction) {
-  $.get('https://api.github.com/users/'+username+'/followers?access_token=' + apiKey).then(function(response){
-    displayFunction(username,response);
-  }).fail(function(error){
-    console.log(error.responseJSON.message);
-  });
-};
-
-User.prototype.getFollowing = function (username, displayFunction) {
-  $.get('https://api.github.com/users/'+username+'/following?access_token=' + apiKey).then(function(response){
-    displayFunction(username,response);
-  }).fail(function(error){
-    console.log(error.responseJSON.message);
-  });
-};
+// User.prototype.getFollowers = function (username, displayFunction) {
+//   $.get('https://api.github.com/users/'+username+'/followers?access_token=' + apiKey).then(function(response){
+//     displayFunction(username,response);
+//   }).fail(function(error){
+//     console.log(error.responseJSON.message);
+//   });
+// };
+//
+// User.prototype.getFollowing = function (username, displayFunction) {
+//   $.get('https://api.github.com/users/'+username+'/following?access_token=' + apiKey).then(function(response){
+//     displayFunction(username,response);
+//   }).fail(function(error){
+//     console.log(error.responseJSON.message);
+//   });
+// };
 
 
 
