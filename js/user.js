@@ -28,8 +28,18 @@ User.prototype.getFollowers = function (username, displayFunction) {
   }).fail(function(error){
     console.log(error.responseJSON.message);
   });
-
 };
+
+User.prototype.getFollowing = function (username, displayFunction) {
+  $.get('https://api.github.com/users/'+username+'/following?access_token=' + apiKey).then(function(response){
+    displayFunction(username,response);
+  }).fail(function(error){
+    console.log(error.responseJSON.message);
+  });
+};
+
+
+
 exports.userModule = User;
 // f2f8bb3db6ffc1a7de0808320421143b7ce7835d
 //https://api.github.com/users/repos?access_token=

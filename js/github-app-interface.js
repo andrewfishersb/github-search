@@ -50,6 +50,18 @@ var displayFollowers = function(username,response){
   }
 }
 
+var displayFollowing = function(username,response){
+  $("#following").empty();
+  $("#following").append("<h4><u>Following</u></h4>");
+  for (var i = 0; i < response.length; i++) {
+    if(i%2!==0){
+      $("#following").append("<div class='row'><div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='following avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div>");
+    }else{
+      $("#following").append("<div class='col-sm-6'><img src='"+response[i].avatar_url+"' alt='following avatar'/><h5><a href='"+response[i].html_url+"'>"+response[i].login+"</a></h5></div></div>");
+    }
+  }
+}
+
 
 var formatDate = function(date){
   var day = new Date(date).toString();
@@ -68,12 +80,14 @@ $(document).ready(function(){
     username.getRepos(user,displayRepo);
     username.getUserInformation(user, displayUser);
     username.getFollowers(user,displayFollowers);
+    username.getFollowing(user,displayFollowing);
+
   });
 });
 
 //Ideas
 //show user searhed for
-  //button to show followers or following, each of which has a button to show more information like of their repos
+  //button to show following or following, each of which has a button to show more information like of their repos
 
 //avatar_url
 //created
