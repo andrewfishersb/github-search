@@ -30,7 +30,8 @@ The user enters a username of a GitHub profile they are searching for| names of 
 
 * Clone from github
 * change directory to github-search
-* run "npm init" and "bower init" in the terminal once in
+* run gulp build
+* run gulp serve
 * run bower install
 * run npm install
 * go to settings in GitHub to generate your own API key
