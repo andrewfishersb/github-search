@@ -89,21 +89,3 @@ $(document).ready(function(){
   });
 });
 
-//Ideas
-//show user searhed for
-  //button to show following or following, each of which has a button to show more information like of their repos
-
-//avatar_url
-//created
-//followers + url
-//following + url
-//location
-//name
-//url
-//url to repo
-
-
-//follower/following
-//avatar_url
-//login
-//html_url
