@@ -1,32 +1,43 @@
 # GitHub Search
 
-## This site will uses javascript and the GitHub API, 10/14/16
-
 #### By **Andrew Fisher**
+
+## Images
 ![ScreenShot](https://cloud.githubusercontent.com/assets/17396138/25400481/9a716f98-29a7-11e7-93eb-eb47af2fb397.png)
 ![ScreenShot](https://cloud.githubusercontent.com/assets/17396138/25400482/9a74f956-29a7-11e7-833e-32173dcb880b.png)
 
 ## Description
-This site will search for any inputted user, and using the GitHub API return information about said user, their repositories, their followers and who they are following.
+A single page simple site that will search for any inputted user, and using the GitHub API return information about said user.
+
+## User Stories
+
+* As a user, I want to be able to search for any valid GitHub user.
+* As a user, I want to see specific information about the user searched.
 
 ## Specifications
 
-
-#### Main Page
-
-user input                | output
-------------------------- | -------------
-The user enters a username of a GitHub profile they are searching for| name, date account created and location are returned
-
-user input                | output
-------------------------- | -------------
-The user enters a username of a GitHub profile they are searching for| repositories belonging to the user with their information such as title date of initial creation and last updated
-
-user input                | output
-------------------------- | -------------
-The user enters a username of a GitHub profile they are searching for| names of all the searched users followers and who they are following.
-
-
+* Search for any GitHub user.
+* See the users:
+  - Profile Picture.
+  - Location.
+  - Name and Username
+    * The username is hyperlinked to the user's GitHub profile
+  - See if they are available for hire
+  - Date their profile was created.
+  - A List of their GitHub repositories, with the following information:
+    * The repositories title
+      - This is hyperlinked to the repositories GitHub page.
+    * The Main language of the repository.
+    * When the repository was created.
+    * When the repository was last updated.
+  - See a list of their followers
+    * Followers Profile Picture.
+    * Followers Username.
+      - The username is hyperlinked to their GitHub profile.
+  - See a list of who they are following.
+    * Followings Profile Picture.
+    * Followings Username.
+      - The username is hyperlinked to their GitHub profile.
 
 ## Setup/Installation Requirements
 
@@ -49,6 +60,9 @@ The user enters a username of a GitHub profile they are searching for| names of 
 * SASS
 * HTML
 * bower
+
+## Known Bugs
+* No validation when the searched username is nonexistent
 
 ### License
 
